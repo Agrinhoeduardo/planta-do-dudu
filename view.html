@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verde & Vida | Loja de Plantas</title>
+
+    <meta name="description"
+          content="Verde & Vida — Loja de plantas, vasos e acessórios. Encontre plantas para interiores, jardins, suculentas, cactos e muito mais.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4caf50;
+            --primary-dark: #2e7d32;
+            --secondary: #183d22;
+            --light: #f3f9f1;
+            --white: #ffffff;
+            --text: #52606d;
+            --green: #25d366;
+            --cream: #fffdf5;
+            --border: #e4eee4;
+            --shadow: 0 15px 45px rgba(7, 40, 20, .12);
+            --radius: 22px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Poppins", sans-serif;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e9f0e9;
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+            font-family: "Poppins";
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, var(--primary), #8bc34a);
+            color: white;
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .menu a {
+            color: var(--secondary);
+            font-size: .92rem;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            border: 0;
+            cursor: pointer;
+            padding: 14px 23px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white !important;
+            box-shadow: 0 10px 25px rgba(76,175,80,.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 27px;
+            border: 0;
+            background: none;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 78px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg,
+                rgba(4,27,15,.94) 0%,
+                rgba(4,27,15,.76) 45%,
+                rgba(4,27,15,.18) 100%),
+                url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 50px;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.22);
+            color: #e8f5e9;
+            font-size: .85rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #a5d66a;
+        }
+
+        .hero p {
+            max-width: 620px;
+            font-size: 1.1rem;
+            color: #e6f1e5;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.5);
+            color: white;
+            background: rgba(255,255,255,.08);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--secondary);
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid #e7eee7;
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--primary);
+            font-size: 2rem;
+            font-family: "Poppins";
+        }
+
+        .stat span {
+            font-size: .88rem;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 55px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            font-size: .85rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem,4vw,3rem);
+            margin: 12px 0 15px;
+        }
+
+        /* =========================
+           SOBRE
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            height: 520px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .experience {
+            position: absolute;
+            right: -25px;
+            bottom: 30px;
+            background: white;
+            padding: 22px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            width: 180px;
+            text-align: center;
+        }
+
+        .experience strong {
+            display: block;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .about-text h2 {
+            font-size: 2.7rem;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .checks {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .checks li {
+            margin: 12px 0;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .checks li::before {
+            content: "✓";
+            display: inline-grid;
+            place-items: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        /* =========================
+           PRODUTOS
+        ========================== */
+
+        .products {
+            background: var(--light);
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--secondary);
+            padding: 10px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .category:hover,
+        .category.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 30px rgba(10,50,20,.06);
+            transition: .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 11px;
+            border-radius: 30px;
+            font-size: .75rem;
+            font-weight: 800;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 7px;
+            font-size: 1.05rem;
+        }
+
+        .product-content p {
+            font-size: .85rem;
+            min-height: 48px;
+            margin-bottom: 13px;
+        }
+
+        .price {
+            color: var(--primary-dark);
+            font-family: "Poppins";
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 13px;
+        }
+
+        .product-btn {
+            width: 100%;
+            border: 0;
+            padding: 11px;
+            border-radius: 10px;
+            background: #e8f5e9;
+            color: var(--primary-dark);
+            font-weight: 800;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .product-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* =========================
+           BENEFÍCIOS
+        ========================== */
+
+        .features {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .features .section-title h2,
+        .features .section-title p {
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 17px;
+        }
+
+        .feature h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #b9cbd4;
+            font-size: .9rem;
+        }
+
+        /* =========================
+           GALERIA
+        ========================== */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr .8fr;
+            grid-auto-rows: 240px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: rgba(5,25,15,.78);
+            color: white;
+            padding: 9px 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: .85rem;
+        }
+
+        /* =========================
+           CUIDADOS
+        ========================== */
+
+        .care {
+            background: var(--cream);
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .care-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius);
+            border: 1px solid #eeeeda;
+            transition: .3s;
+        }
+
+        .care-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .care-number {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #e8f5e9;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .care-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           DEPOIMENTOS
+        ========================== */
+
+        .testimonials {
+            background: #f7fbf7;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 8px 30px rgba(10,50,20,.06);
+        }
+
+        .stars {
+            color: #ffc107;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .client strong {
+            color: var(--secondary);
+            display: block;
+        }
+
+        .client small {
+            color: #78878f;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            padding: 70px 0;
+            background:
+                linear-gradient(100deg,
+                rgba(76,175,80,.96),
+                rgba(46,125,50,.94));
+            color: white;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.4rem;
+        }
+
+        .cta p {
+            margin-top: 8px;
+            color: #ddf7df;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+
+        /* =========================
+           CONTATO
+        ========================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin: 12px 0 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 13px;
+            background: #e8f5e9;
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+        }
+
+        .contact-item strong {
+            color: var(--secondary);
+            display: block;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #dce8dc;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            outline: none;
+            transition: .3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(76,175,80,.1);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #061725;
+            color: #9bb0bb;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        footer .logo {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 9px 0;
+        }
+
+        footer a {
+            color: #9bb0bb;
+            transition: .3s;
+        }
+
+        footer a:hover {
+            color: #8bc34a;
+        }
+
+        .copyright {
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            text-align: center;
+            font-size: .85rem;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: var(--green);
+            color: white;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37,211,102,.35);
+            z-index: 999;
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .products-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+                box-shadow: 0 15px 30px rgba(0,0,0,.08);
+                display: none;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .stat {
+                margin: 10px 0;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid,
+            .care-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                margin-top: -30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                padding: 18px;
+            }
+
+            .stat strong {
+                font-size: 1.5rem;
+            }
+
+            .about-image img {
+                height: 380px;
+            }
+
+            .experience {
+                right: 10px;
+            }
+
+            .products-grid,
+            .testimonials-grid,
+            .care-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 260px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: auto;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="#inicio" class="logo">
+            <span class="logo-icon">🌿</span>
+            Verde & Vida
+        </a>
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <ul class="menu" id="menu">
+
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#plantas">Plantas</a></li>
+            <li><a href="#cuidados">Cuidados</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+
+            <li>
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/5546999871291"
+                    target="_blank">
+                    Comprar pelo WhatsApp
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                🌱 Plantas que transformam ambientes
+            </span>
+
+            <h1>
+                Leve mais
+                <span>verde e vida</span>
+                para sua casa.
+            </h1>
+
+            <p>
+                Plantas selecionadas, vasos e acessórios para você criar
+                um cantinho especial dentro ou fora de casa.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#plantas"
+                    class="btn btn-primary">
+                    Ver plantas →
+                </a>
+
+                <a
+                    href="#sobre"
+                    class="btn btn-outline">
+                    Conheça a loja
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ESTATÍSTICAS
+========================== -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong>+500</strong>
+                <span>Clientes felizes</span>
+            </div>
+
+            <div class="stat">
+                <strong>+50</strong>
+                <span>Espécies disponíveis</span>
+            </div>
+
+            <div class="stat">
+                <strong>5+</strong>
+                <span>Anos de experiência</span>
+            </div>
+
+            <div class="stat">
+                <strong>5★</strong>
+                <span>Avaliação dos clientes</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SOBRE
+========================== -->
+
+<section id="sobre">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1000&q=85"
+                    alt="Plantas em vasos">
+
+                <div class="experience">
+                    <strong>5+</strong>
+                    anos cultivando paixão por plantas
+                </div>
+
+            </div>
+
+            <div class="about-text">
+
+                <span
+                    class="tag"
+                    style="color:#2e7d32;background:#e8f5e9;border:0;">
+                    Sobre a Verde & Vida
+                </span>
+
+                <h2>
+                    Um pedacinho da natureza para chamar de seu.
+                </h2>
+
+                <p>
+                    A Verde & Vida nasceu para aproximar as pessoas da natureza
+                    através de plantas bonitas, saudáveis e escolhidas com carinho.
+                </p>
+
+                <p>
+                    Aqui você encontra opções para apartamentos, casas,
+                    escritórios, jardins e todos os tipos de espaços.
+                </p>
+
+                <ul class="checks">
+                    <li>Plantas selecionadas</li>
+                    <li>Grande variedade de espécies</li>
+                    <li>Vasos e acessórios</li>
+                    <li>Orientação para cuidados</li>
+                </ul>
+
+                <a
+                    href="#plantas"
+                    class="btn btn-primary">
+                    Ver catálogo
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUTOS
+========================== -->
+
+<section class="products" id="plantas">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Nosso catálogo</span>
+
+            <h2>
+                Escolha sua nova planta
+            </h2>
+
+            <p>
+                Encontre a planta perfeita para o seu espaço e seu estilo de vida.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <button class="category active" onclick="filterProducts('todos', this)">
+                Todas
+            </button>
+
+            <button class="category" onclick="filterProducts('interior', this)">
+                Interior
+            </button>
+
+            <button class="category" onclick="filterProducts('suculenta', this)">
+                Suculentas
+            </button>
+
+            <button class="category" onclick="filterProducts('cacto', this)">
+                Cactos
+            </button>
+
+            <button class="category" onclick="filterProducts('jardim', this)">
+                Jardim
+            </button>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <!-- PRODUTO 1 -->
+
+            <article class="product" data-category="interior">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Mais vendida
+                    </span>
+
+                    <img
+                        src="images.jpeg"
+                        alt="Costela de Adão">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Costela de Adão</h3>
+
+                    <p>
+                        Linda folhagem para ambientes internos.
+                    </p>
+
+                    <span class="price">
+                        R$ 89,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Costela de Adão - R$ 89,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 2 -->
+
+            <article class="product" data-category="suculenta">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Fácil de cuidar
+                    </span>
+
+                    <img
+                        src="images (1).jpeg"
+                        alt="Suculenta">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Suculenta</h3>
+
+                    <p>
+                        Pequena, charmosa e perfeita para decoração.
+                    </p>
+
+                    <span class="price">
+                        R$ 24,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Suculenta - R$ 24,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 3 -->
+
+            <article class="product" data-category="cacto">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Novidade
+                    </span>
+
+                    <img
+                        src="images (2).jpeg"
+                        alt="Cacto em vaso">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Cacto Mini</h3>
+
+                    <p>
+                        Resistente e ideal para pequenos espaços.
+                    </p>
+
+                    <span class="price">
+                        R$ 29,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Cacto Mini - R$ 29,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 4 -->
+
+            <article class="product" data-category="interior">
+
+                <div class="product-image">
+
+                    <img
+                        src="images (3).jpeg"
+                        alt="Samambaia">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Samambaia</h3>
+
+                    <p>
+                        Folhagem exuberante para deixar o ambiente mais fresco.
+                    </p>
+
+                    <span class="price">
+                        R$ 59,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Samambaia - R$ 59,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 5 -->
+
+            <article class="product" data-category="jardim">
+
+                <div class="product-image">
+
+                    <img
+                        src="images (5).jpeg"
+                        alt="Planta para jardim">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Palmeira Areca</h3>
+
+                    <p>
+                        Uma ótima opção para ambientes amplos.
+                    </p>
+
+                    <span class="price">
+                        R$ 119,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Palmeira Areca - R$ 119,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 6 -->
+
+            <article class="product" data-category="interior">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Destaque
+                    </span>
+
+                    <img
+                        src="images (4).jpeg"
+                        alt="Jiboia">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Jiboia</h3>
+
+                    <p>
+                        Fácil de cultivar e ótima para ambientes internos.
+                    </p>
+
+                    <span class="price">
+                        R$ 49,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Jiboia - R$ 49,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 7 -->
+
+            <article class="product" data-category="suculenta">
+
+                <div class="product-image">
+
+                    <img
+                        src="images (6).jpeg"
+                        alt="Suculenta em vaso">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Mix de Suculentas</h3>
+
+                    <p>
+                        Uma combinação especial para decorar sua casa.
+                    </p>
+
+                    <span class="price">
+                        R$ 39,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Mix de Suculentas - R$ 39,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 8 -->
+
+            <article class="product" data-category="jardim">
+
+                <div class="product-image">
+
+                    <img
+                        src="images (7).jpeg"
+                        alt="Planta ornamental">
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Planta Ornamental</h3>
+
+                    <p>
+                        Para jardins e áreas externas.
+                    </p>
+
+                    <span class="price">
+                        R$ 79,90
+                    </span>
+
+                    <button
+                        class="product-btn"
+                        onclick="comprar('Planta Ornamental - R$ 79,90')">
+                        🛒 Comprar
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DIFERENCIAIS
+========================== -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Por que escolher a Verde & Vida?</span>
+
+            <h2>
+                Mais carinho para suas plantas
+            </h2>
+
+            <p>
+                Da escolha da espécie até os cuidados depois da compra.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature">
+
+                <div class="feature-icon">🌱</div>
+
+                <h3>Plantas saudáveis</h3>
+
+                <p>
+                    Selecionamos nossas plantas com atenção e cuidado.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🪴</div>
+
+                <h3>Vasos e acessórios</h3>
+
+                <p>
+                    Encontre tudo para montar seu cantinho verde.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">💚</div>
+
+                <h3>Atendimento</h3>
+
+                <p>
+                    Ajudamos você a escolher a planta ideal para seu espaço.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🚚</div>
+
+                <h3>Entrega</h3>
+
+                <p>
+                    Consulte disponibilidade de entrega para sua região.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CUIDADOS
+========================== -->
+
+<section class="care" id="cuidados">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Dicas de cuidados</span>
+
+            <h2>
+                Sua planta merece atenção
+            </h2>
+
+            <p>
+                Alguns cuidados simples fazem toda diferença para manter suas plantas bonitas.
+            </p>
+
+        </div>
+
+
+        <div class="care-grid">
+
+            <div class="care-card">
+
+                <div class="care-number">
+                    01
+                </div>
+
+                <h3>Iluminação</h3>
+
+                <p>
+                    Observe a quantidade de luz que cada espécie precisa.
+                    Algumas gostam de sol direto, outras preferem luz indireta.
+                </p>
+
+            </div>
+
+
+            <div class="care-card">
+
+                <div class="care-number">
+                    02
+                </div>
+
+                <h3>Rega</h3>
+
+                <p>
+                    Evite excesso de água. Antes de regar, verifique se o solo
+                    está realmente seco.
+                </p>
+
+            </div>
+
+
+            <div class="care-card">
+
+                <div class="care-number">
+                    03
+                </div>
+
+                <h3>Adubação</h3>
+
+                <p>
+                    Uma adubação adequada ajuda a fornecer os nutrientes
+                    necessários para o crescimento da planta.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERIA
+========================== -->
+
+<section id="galeria">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Nossa loja</span>
+
+            <h2>
+                Um espaço cheio de vida
+            </h2>
+
+            <p>
+                Inspire-se para criar seu próprio cantinho verde.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+
+                <img
+                    src="images (8).jpeg"
+                    alt="Coleção de plantas">
+
+                <span class="gallery-caption">
+                    Plantas de interior
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images (9).jpeg"
+                    alt="Plantas decorativas">
+
+                <span class="gallery-caption">
+                    Plantas decorativas
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images (12).jpegSSS"
+                    alt="Suculentas">
+
+                <span class="gallery-caption">
+                    Suculentas
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images (11).jpeg"
+                    alt="Vasos decorativos">
+
+                <span class="gallery-caption">
+                    Vasos
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="images.jpeg"
+                    alt="Plantas verdes">
+
+                <span class="gallery-caption">
+                    Nosso jardim
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DEPOIMENTOS
+========================== -->
+
+<section class="testimonials" id="depoimentos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>Clientes</span>
+
+            <h2>
+                Quem compra, recomenda
+            </h2>
+
+            <p>
+                Algumas experiências dos nossos clientes.
+            </p>
+
+        </div>
+
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Amei minha Costela de Adão! A planta chegou linda
+                    e o atendimento foi excelente."
+                </p>
+
+                <div class="client">
+
+                    <div class="avatar">
+                        M
+                    </div>
+
+                    <div>
+                        <strong>Mariana S.</strong>
+                        <small>Cliente</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Comprei várias suculentas para decorar meu escritório.
+                    Ficaram lindas!"
+                </p>
+
+                <div class="client">
+
+                    <div class="avatar">
+                        R
+                    </div>
+
+                    <div>
+                        <strong>Rafael A.</strong>
+                        <small>Cliente</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Gostei muito da variedade e das orientações de cuidado.
+                    Com certeza vou comprar novamente."
+                </p>
+
+                <div class="client">
+
+                    <div class="avatar">
+                        C
+                    </div>
+
+                    <div>
+                        <strong>Camila P.</strong>
+                        <small>Cliente</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <div>
+
+                <h2>
+                    Encontrou sua planta favorita?
+                </h2>
+
+                <p>
+                    Fale conosco e consulte disponibilidade e entrega.
+                </p>
+
+            </div>
+
+            <a
+                href="https://wa.me/5546999871291"
+                target="_blank"
+                class="btn btn-white">
+
+                💬 Comprar pelo WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTATO
+========================== -->
+
+<section id="contato">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <span
+                    class="tag"
+                    style="color:#2e7d32;background:#e8f5e9;border:0;">
+                    Fale conosco
+                </span>
+
+                <h2>
+                    Vamos encontrar a planta ideal para você?
+                </h2>
+
+                <p>
+                    Entre em contato para consultar plantas disponíveis,
+                    preços, vasos, acessórios e opções de entrega.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📱
+                    </div>
+
+                    <div>
+                        <strong>WhatsApp</strong>
+                        (46) 999871291
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <div>
+                        <strong>E-mail</strong>
+                        vieira.lima.eduardo@escola.pr.gov.br
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+                        <strong>Localização</strong>
+                        Mariópolis - PR
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        🕐
+                    </div>
+
+                    <div>
+                        <strong>Horário</strong>
+                        Segunda a sábado — 09h às 17:30h
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" id="formContato">
+
+                <h3 style="font-size:1.5rem;margin-bottom:20px;">
+                    Consulte uma planta
+                </h3>
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Seu nome"
+                        required>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        placeholder="Seu telefone"
+                        required>
+
+                </div>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Seu e-mail">
+
+
+                <select id="produto" required>
+
+                    <option value="">
+                        Qual produto você procura?
+                    </option>
+
+                    <option>Plantas de Interior</option>
+                    <option>Suculentas</option>
+                    <option>Cactos</option>
+                    <option>Plantas de Jardim</option>
+                    <option>Vasos</option>
+                    <option>Acessórios</option>
+                    <option>Quero ajuda para escolher</option>
+
+                </select>
+
+
+                <textarea
+                    id="mensagem"
+                    placeholder="Conte o que você está procurando..."></textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="width:100%;">
+
+                    💬 Enviar pelo WhatsApp
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <a href="#inicio" class="logo">
+
+                    <span class="logo-icon">
+                        🌿
+                    </span>
+
+                    Verde & Vida
+
+                </a>
+
+                <p>
+                    Plantas, vasos e acessórios para deixar
+                    seus ambientes mais bonitos e naturais.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Menu</h3>
+
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#plantas">Plantas</a></li>
+                    <li><a href="#cuidados">Cuidados</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Categorias</h3>
+
+                <ul>
+                    <li><a href="#plantas">Interior</a></li>
+                    <li><a href="#plantas">Suculentas</a></li>
+                    <li><a href="#plantas">Cactos</a></li>
+                    <li><a href="#plantas">Jardim</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contato</h3>
+
+                <ul>
+                    <li>(46) 999871291</li>
+                    <li>vieira.lima.eduardo@escola.pr.gov.br</li>
+                    <li>mariópolis - PR</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Verde & Vida.
+            Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/5546999999999"
+    target="_blank"
+    aria-label="Comprar pelo WhatsApp">
+
+    💬
+
+</a>
+
+
+<script>
+
+    /* =========================
+       MENU MOBILE
+    ========================== */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("menu")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    /* FECHAR MENU AO CLICAR */
+
+    document
+        .querySelectorAll(".menu a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("menu")
+                    .classList
+                    .remove("active");
+
+            });
+
+        });
+
+
+    /* =========================
+       FILTRO DE PRODUTOS
+    ========================== */
+
+    function filterProducts(category, button) {
+
+        const products =
+            document.querySelectorAll(".product");
+
+        const buttons =
+            document.querySelectorAll(".category");
+
+        buttons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        products.forEach(product => {
+
+            if (
+                category === "todos" ||
+                product.dataset.category === category
+            ) {
+
+                product.style.display = "block";
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       COMPRAR PELO WHATSAPP
+    ========================== */
+
+    function comprar(produto) {
+
+        const numero = "5546999999999";
+
+        const mensagem =
+            `Olá! 🌿 Tenho interesse em comprar: ${produto}. Gostaria de saber se está disponível.`;
+
+        const url =
+            `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, "_blank");
+
+    }
+
+
+    /* =========================
+       FORMULÁRIO → WHATSAPP
+    ========================== */
+
+    document
+        .getElementById("formContato")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const nome =
+                document.getElementById("nome").value;
+
+            const telefone =
+                document.getElementById("telefone").value;
+
+            const produto =
+                document.getElementById("produto").value;
+
+            const mensagem =
+                document.getElementById("mensagem").value;
+
+            const texto =
+                `Olá! 🌿\n\n` +
+                `Meu nome é ${nome}.\n` +
+                `Telefone: ${telefone}\n\n` +
+                `Estou procurando: ${produto}\n\n` +
+                `Mensagem: ${mensagem}`;
+
+            const numero = "5546999999999";
+
+            const url =
+                `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+            window.open(url, "_blank");
+
+            this.reset();
+
+        });
+
+</script>
+
+</body>
+</html>
